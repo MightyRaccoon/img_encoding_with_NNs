@@ -3,7 +3,6 @@ from typing import Tuple, List, NoReturn
 
 import cv2
 import numpy as np
-import tensorflow as tf
 import tensorflow.keras as keras
 
 

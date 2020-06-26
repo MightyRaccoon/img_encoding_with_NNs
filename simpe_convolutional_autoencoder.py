@@ -1,15 +1,15 @@
+import datetime
 import logging
 import os
-import datetime
 
 import click
 import tensorflow as tf
-from tensorflow.keras import models, losses, optimizers, metrics, activations
-from tensorflow.keras.preprocessing.image import DirectoryIterator, ImageDataGenerator
-from tensorflow.keras.layers import Conv2D, MaxPool2D, Input, Conv2DTranspose, Activation, UpSampling2D, LeakyReLU
+from tensorflow.keras import models, losses, optimizers, metrics
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Input, Conv2DTranspose, UpSampling2D, LeakyReLU
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.utils import plot_model
 
-from utils.DataGenerator_test import DataGenerator
+from utils.DataGenerator import DataGenerator
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
