@@ -38,7 +38,7 @@ class DataGenerator(keras.utils.Sequence):
         Denotes the number of batches per epoch
         :return: Count of steps (batches) per epochs
         """
-        return int(len(os.listdir(self.data_dir)) / self.batch_size)
+        return len(os.listdir(self.data_dir)) // self.batch_size
 
     def __getitem__(self, index: int) -> Tuple[np.ndarray, np.ndarray]:
         """
@@ -70,6 +70,8 @@ class DataGenerator(keras.utils.Sequence):
         img_list = []
         for img in ids_list:
             img_mat = cv2.imread('/'.join([self.data_dir, img]))
+            if self.n_channels == 1:
+                img_mat = cv2.cvtColor(img_mat, cv2.COLOR_BGR2GRAY)
             img_mat = cv2.resize(img_mat, dsize=self.image_size)
             img_list.append(img_mat)
         return np.asarray(img_list)

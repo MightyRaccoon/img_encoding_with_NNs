@@ -6,7 +6,6 @@ from tensorflow import math
 from tensorflow.keras.metrics import Metric
 
 
-
 class MAPEavg(Metric):
 
     def __init__(self,  batch_shape: list, name='MAPE_avg'):

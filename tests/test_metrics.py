@@ -5,7 +5,6 @@ import tensorflow as tf
 
 from utils.metrics import MAPEavg
 
-tf.compat.v1.disable_eager_execution()
 
 def test_MAPEavg_1d_ident():
 

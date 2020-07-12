@@ -12,7 +12,6 @@ from utils.DataGenerator import DataGenerator
 from utils.metrics import MAPEavg
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
-tf.compat.v1.executing_eagerly()
 
 log = logging.getLogger(__name__)
 
